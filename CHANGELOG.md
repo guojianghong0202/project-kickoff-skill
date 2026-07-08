@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 - 2026-07-08
+
+- Add `SECURITY.md` with vulnerability reporting guidance.
+- Add Dependabot configuration for GitHub Actions.
+- Add OpenSSF Scorecard workflow and README badge.
+- Add README license and tag badges.
+
 ## 1.0.0 - 2026-07-08
 
 - Add Claude Code plugin manifest.

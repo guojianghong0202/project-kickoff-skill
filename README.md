@@ -1,5 +1,9 @@
 # Project Kickoff Skill
 
+[![License](https://img.shields.io/github/license/guojianghong0202/project-kickoff-skill)](LICENSE)
+[![Tag](https://img.shields.io/github/v/tag/guojianghong0202/project-kickoff-skill)](https://github.com/guojianghong0202/project-kickoff-skill/tags)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/guojianghong0202/project-kickoff-skill/badge)](https://scorecard.dev/viewer/?uri=github.com/guojianghong0202/project-kickoff-skill)
+
 中文项目启动工作流 skill：把“我想做个 X”变成可执行启动包，包含项目章程、PR/FAQ、RACI、里程碑关卡、风险登记和启动会议程。
 
 它的核心不是多写模板，而是防止 AI 在没问清楚时直接开干：先澄清输入，再按 S/M/L 项目量级裁剪输出。
