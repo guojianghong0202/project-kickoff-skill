@@ -8,9 +8,35 @@
 
 它的核心不是多写模板，而是防止 AI 在没问清楚时直接开干：先澄清输入，再按 S/M/L 项目量级裁剪输出。
 
+> Built for AI agents that need to ask better questions before writing code or plans.
+
+## Why This Exists
+
+AI coding agents are fast, but they often start too early.
+
+This skill adds a kickoff gate before implementation:
+
+```text
+idea or candidates
+→ score what is worth starting
+→ judge S/M/L
+→ ask at most two rounds of questions
+→ produce a kickoff packet with explicit TBD owners
+```
+
+Use it when you want an AI agent to slow down, clarify the project, define success, and only then move toward execution.
+
+## Who Should Use It
+
+- AI builders starting agent, RAG, MCP, local AI, eval, or workflow automation projects.
+- Product and engineering teams starting internal tools or software features.
+- Developers planning technical transformations, RFCs, migrations, or architecture changes.
+- Solo builders choosing which AI project idea is worth starting first.
+
 ## What It Does
 
 - 判断项目量级：S / M / L。
+- 对多个候选项目先做 100 分制评分，筛出最值得启动的 1-3 个。
 - 用最多两轮访谈收集关键信息。
 - 输出项目启动包：章程、PR/FAQ、六页纸、RFC、RACI、里程碑、风险、启动会议程。
 - 对 AI / 模型 / 数据项目补充 eval、灰度放量和安全失败模式分析。
@@ -18,7 +44,7 @@
 
 ## Quick Use
 
-Typical prompts:
+Try one of these prompts:
 
 ```text
 帮我启动一个 AI 客服项目，先按你的流程问我。
@@ -39,11 +65,30 @@ The skill should:
 3. Produce a draft kickoff packet with explicit `TBD（负责人 / 截止日）` items.
 4. Run the quality gate before final output.
 
+## 30-Second Demo Prompt
+
+```text
+我有三个候选项目：
+1. local MCP coding agent，GitHub 120 stars，3 小时前发布
+2. CSS button library，GitHub 300 stars，1 小时前发布
+3. RAG eval dashboard，GitHub 40 stars，6 小时前发布
+
+请先按候选项目评分模型排序，再选 Top 1 进入项目启动流程。
+```
+
+Expected behavior:
+
+- Do not pick only by stars.
+- Score by freshness, AI relevance, velocity, discussion, and novelty.
+- Explain why a high-star but non-AI item may rank lower.
+- Then ask at most 1-3 kickoff questions for the selected project.
+
 ## Skill Improvement Focus
 
 This repository is primarily a project kickoff skill, not a plugin framework. The most important quality assets are:
 
 - `SKILL.md`：triggering and execution workflow.
+- `references/scoring.md`：candidate project scoring model.
 - `references/questions.md`：two-round interview question bank.
 - `references/quality-gate.md`：self-check before delivering a kickoff packet.
 - `references/templates.md`：copy-fill templates.
@@ -51,6 +96,12 @@ This repository is primarily a project kickoff skill, not a plugin framework. Th
 - `evals/prompts.md`：manual regression prompts for trigger and boundary testing.
 
 ## Install Options
+
+Most users should start with one of these:
+
+- Claude Code plugin: best for Claude Code users.
+- Codex skill directory: best for Codex users.
+- Manual route in `AGENTS.md`: best for custom agent workflows.
 
 ### Claude Code Plugin
 
@@ -116,6 +167,7 @@ When the user asks to 启动/立项/kickoff a project, write a 立项书, 项目
 ├── skills/project-kickoff/SKILL.md
 ├── references/
 │   ├── templates.md
+│   ├── scoring.md
 │   ├── questions.md
 │   ├── quality-gate.md
 │   ├── playbooks.md
@@ -128,6 +180,31 @@ When the user asks to 启动/立项/kickoff a project, write a 立项书, 项目
 ```
 
 The root `SKILL.md` remains for backward compatibility. The plugin entrypoint is `skills/project-kickoff/SKILL.md`.
+
+## GitHub Topics
+
+Recommended repository topics:
+
+```text
+claude-code
+codex
+agent-skills
+ai-agent
+project-management
+project-kickoff
+pr-faq
+raci
+rfc
+mcp
+developer-tools
+chinese
+```
+
+## Shareable One-Liner
+
+```text
+一个中文 AI 项目启动 skill，专治 agent 没问清楚就开干：先筛候选、判断 S/M/L、两轮访谈，再输出带 TBD owner 的启动包。
+```
 
 ## Output Preview
 
@@ -158,6 +235,7 @@ See `examples/m-project-kickoff.md` for a complete filled example.
 Before treating a skill change as done:
 
 - `SKILL.md` frontmatter description stays trigger-focused.
+- Candidate scoring uses freshness, relevance, velocity, discussion, and novelty when the user provides multiple options.
 - At least one filled example exists.
 - `evals/prompts.md` covers trigger, non-trigger, and boundary cases.
 - `references/questions.md` supports short two-round interviews.

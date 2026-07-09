@@ -1,8 +1,8 @@
 {
   "name": "project-kickoff",
   "displayName": "Project Kickoff",
-  "version": "1.0.0",
-  "description": "Chinese project kickoff workflow that turns vague ideas into actionable kickoff packets with charter, RACI, milestones, gates, risks, and meeting agenda.",
+  "version": "1.1.0",
+  "description": "Chinese AI/software project kickoff skill that scores candidate ideas and turns vague projects into actionable kickoff packets with PR/FAQ, RFC, RACI, milestones, gates, risks, and TBD owners.",
   "author": {
     "name": "guojianghong0202",
     "url": "https://github.com/guojianghong0202"
@@ -12,8 +12,18 @@
   "license": "MIT",
   "keywords": [
     "project-management",
+    "project-kickoff",
     "kickoff",
     "agent-skills",
+    "ai-agent",
+    "software-project",
+    "internal-tools",
+    "technical-transformation",
+    "pr-faq",
+    "raci",
+    "rfc",
+    "mcp",
+    "developer-tools",
     "claude-code",
     "codex",
     "chinese"

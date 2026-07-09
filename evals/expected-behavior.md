@@ -8,6 +8,8 @@
 - The draft includes success metrics, In/Out scope, decision owner, milestones/gates, risks, and TBD items.
 - If the user asks for PR/FAQ or working backwards, the output starts from customer value and includes FAQ.
 - If the project is AI/model/data related, the output includes eval, staged rollout, and failure/safety analysis.
+- If the user provides multiple candidates and asks which one is worth starting, the skill uses the scoring model: freshness, relevance, velocity, discussion, novelty.
+- For `--limit 30` style reports, the skill groups by source first and allocates slots across groups instead of taking a global top 30.
 
 ## Non-triggering prompts
 
@@ -19,3 +21,4 @@
 
 - For "我想做一个 AI 产品", ask about target user, problem, success metric, and constraints.
 - For urgent but incomplete information, output assumptions plus `TBD（负责人 / 截止日）` instead of pretending the information is complete.
+- For high-star but non-AI items, the skill should explain that velocity can be high while relevance and novelty stay low.

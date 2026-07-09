@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 - 2026-07-10
+
+- Add candidate project scoring model for AI/software/internal-tool/technical-transformation opportunities.
+- Add `references/scoring.md` with freshness, relevance, velocity, discussion, and novelty dimensions.
+- Add source-grouped limit allocation for reports such as `--limit 30`.
+- Update skill workflow, README, quality gate, and eval prompts to cover candidate scoring.
+- Improve README positioning, demo prompt, target users, GitHub topics, and shareable one-liner for discoverability.
+- Update plugin manifest description, version, and keywords for better ecosystem search.
+
 ## 1.0.1 - 2026-07-08
 
 - Add `SECURITY.md` with vulnerability reporting guidance.

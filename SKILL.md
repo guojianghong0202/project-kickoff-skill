@@ -1,6 +1,6 @@
 ---
 name: project-kickoff
-description: 用于 AI、软件产品、内部工具、技术改造类项目的启动澄清，把模糊想法变成可执行启动包。触发词：启动项目、立项、kickoff、项目章程、PR/FAQ、RFC、RACI、里程碑、验收标准、我想做个 X 从哪开始。先判断 S/M/L，再最多两轮访谈，输出带 TBD 的草案。不用于普通任务排期、文案、会议纪要或单点 bug。
+description: 用于 AI、软件产品、内部工具、技术改造类项目的启动澄清和候选项目评分，把模糊想法或候选列表变成可执行启动包。触发词：启动项目、立项、kickoff、项目章程、PR/FAQ、RFC、RACI、里程碑、验收标准、候选项目评分、哪个项目值得做、我想做个 X 从哪开始。先判断 S/M/L，再最多两轮访谈，输出带 TBD 的草案。不用于普通任务排期、文案、会议纪要或单点 bug。
 ---
 
 # 项目启动流程（Project Kickoff）
@@ -31,6 +31,12 @@ description: 用于 AI、软件产品、内部工具、技术改造类项目的�
 ## 操作流程
 
 按顺序走。每一步先判断该做到什么深度，不要对小项目上重型流程，也不要对大项目省关键步骤。
+
+### 可选第 -1 步：候选项目评分
+
+当用户给出多个候选项目、趋势条目、GitHub/Hacker News/Product Hunt/arXiv/RSS 内容，并问“哪个值得做”“哪个适合启动”“帮我排序/打分”时，先读取 `references/scoring.md` 做候选评分。
+
+评分只用于筛选优先级，不替代项目启动。选出 1-3 个高分候选后，再进入第 0 步判断项目体量。
 
 ### 第 0 步：判断项目体量，选启动深度
 
@@ -110,6 +116,7 @@ description: 用于 AI、软件产品、内部工具、技术改造类项目的�
 ## 参考文件
 
 - `references/templates.md`：章程、PR/FAQ、六页纸、RFC、RACI、风险、会议程、AGENTS.md 模板。需要具体模板时读取对应章节。
+- `references/scoring.md`：候选项目评分模型。用户给多个候选项目或问“哪个值得做”时读取。
 - `references/questions.md`：两轮访谈问题库和按项目类型分流的问题。需要追问时读取。
 - `references/quality-gate.md`：输出前自检清单和常见跑偏反模式。交付草案前读取。
 - `references/playbooks.md`：Amazon、Google/Meta、AI 大厂、PMBOK、Stage-Gate 等方法对照。用户问“大厂怎么做”时读取。
