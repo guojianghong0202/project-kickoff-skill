@@ -85,10 +85,9 @@ try {
   $CodexHome = Join-Path $env:LOCALAPPDATA 'AI_ShiZhan\codex-owner'
   New-Item -ItemType Directory -Path $CodexHome -Force | Out-Null
   $env:CODEX_HOME = $CodexHome
-  @'
-forced_login_method = "chatgpt"
-cli_auth_credentials_store = "file"
-'@.Replace('\"','"') | Set-Content -Path (Join-Path $CodexHome 'config.toml') -Encoding UTF8
+  $ConfigPath = Join-Path $CodexHome 'config.toml'
+  $ConfigText = "forced_login_method = `"chatgpt`"`r`ncli_auth_credentials_store = `"file`"`r`n"
+  [System.IO.File]::WriteAllText($ConfigPath, $ConfigText, [System.Text.UTF8Encoding]::new($false))
   Remove-ApiEnvironment
   & codex login status 2>$null
   if ($LASTEXITCODE -ne 0) {
