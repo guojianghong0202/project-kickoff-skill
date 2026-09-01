@@ -88,7 +88,7 @@ try {
   @'
 forced_login_method = "chatgpt"
 cli_auth_credentials_store = "file"
-'@ | Set-Content -Path (Join-Path $CodexHome 'config.toml') -Encoding UTF8
+'@.Replace('\"','"') | Set-Content -Path (Join-Path $CodexHome 'config.toml') -Encoding UTF8
   Remove-ApiEnvironment
   & codex login status 2>$null
   if ($LASTEXITCODE -ne 0) {
