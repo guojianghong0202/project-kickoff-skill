@@ -15,7 +15,7 @@
 在办公室 Windows 台式机按 `Win + R`，粘贴下面完整一行并回车：
 
 ```powershell
-powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path ([Environment]::GetFolderPath('Desktop')) 'AI-ShiZhan-Shared-Work-Codex.ps1'; Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/guojianghong0202/project-kickoff-skill/aa1a1b82ca0e1bf4b2ba14238c896b7910ac496e/ai-shizhan-shared-work-center/BOOTSTRAP_CODEX.ps1' -OutFile $p; & $p"
+powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$p=Join-Path ([Environment]::GetFolderPath('Desktop')) 'AI-ShiZhan-Shared-Work-Codex.ps1'; Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/guojianghong0202/project-kickoff-skill/9802f76a93f009e2152ed1ba4ad076d04be50dfe/ai-shizhan-shared-work-center/BOOTSTRAP_CODEX.ps1' -OutFile $p; & $p"
 ```
 
 脚本从不可变的 Git commit 下载，不经过聊天附件下载按钮。
