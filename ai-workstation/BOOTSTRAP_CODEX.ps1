@@ -6,7 +6,7 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
-$SpecUrl = 'https://raw.githubusercontent.com/guojianghong0202/project-kickoff-skill/ai-workstation-codex/ai-workstation/CODEX_SPEC.md'
+$SpecUrl = 'https://raw.githubusercontent.com/guojianghong0202/project-kickoff-skill/c20a01bf7452845a5c847990aa9919a65d88d424/ai-workstation/CODEX_SPEC.md'
 $Target = if (Test-Path 'D:\') { 'D:\AI_ShiZhan_Workstation' } else { Join-Path $env:USERPROFILE 'AI_ShiZhan_Workstation' }
 $Desktop = [Environment]::GetFolderPath('Desktop')
 $LogPath = Join-Path $Desktop ('AI实战_Codex部署日志_' + (Get-Date -Format 'yyyyMMdd-HHmmss') + '.txt')
