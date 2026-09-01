@@ -1,0 +1,40 @@
+{
+  "display_information": {
+    "name": "AI实战网关",
+    "description": "在飞书 AI实战群与 ChatGPT Work 之间安全中转工单和交付文件",
+    "background_color": "#1f2937"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "AI实战网关",
+      "always_online": true
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "chat:write",
+        "files:write",
+        "files:read",
+        "channels:read",
+        "channels:history",
+        "groups:read",
+        "groups:history"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "message.channels",
+        "message.groups"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}
